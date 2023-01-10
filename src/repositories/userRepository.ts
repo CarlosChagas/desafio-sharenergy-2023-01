@@ -1,4 +1,4 @@
-const userDb: Array<Iuser> = [
+const userDb: Array<IUser> = [
     {
         username: 'desafiosharenergy',
         password: '$2a$10$YRkDZ.GPfYjyYY5Ccw44bOJN7rwBsFtiT/sKS8emzJs6rw/uJHfmi'

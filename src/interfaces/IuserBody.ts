@@ -1,6 +1,8 @@
-interface IuserBody {
+interface IUserBody {
+    id?: string,
     username: string,
-    password: string
+    password: string,
+
 }
 
-export default IuserBody
+export default IUserBody

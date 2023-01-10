@@ -1,14 +1,13 @@
 import { FastifyReply, FastifyRequest } from "fastify"
-import IuserBody from "../interfaces/IuserBody"
+import IUserBody from "../interfaces/IuserBody"
 import userService from "../services/userService"
 
+async function authenticate(request: FastifyRequest<{ Body: IUserBody }>, reply: FastifyReply) {
 
+        const userLogin: IUser = request.body
+        let token = await userService.authenticateUser(userLogin)
+        reply.status(200).send({ response: token, auth: true })
 
-async function authenticate(request: FastifyRequest<{ Body: IuserBody }>, reply: FastifyReply) {
-    
-        let user: Iuser = request.body
-        reply.status(201).send(await userService.authenticateUser(user))
-    
 }
 
 export default authenticate

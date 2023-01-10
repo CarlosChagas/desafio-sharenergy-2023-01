@@ -1,4 +1,6 @@
-interface Iuser {
+interface IUser {
+    id?: string,
     username: string,
-    password: string
+    password: string,
+
 }

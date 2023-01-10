@@ -1,17 +1,18 @@
 import userRepository from '../repositories/userRepository'
 import { compare } from 'bcrypt-ts'
+import jwt from '../security/jwt'
 
 
-async function authenticateUser(userLogin: Iuser) {
-
+async function authenticateUser(userLogin: IUser) {
+   
     if (await checkLoginCredentials(userLogin)) {
-        return await userRepository.getUserByName(userLogin.username)
+       return jwt.generateToken(userLogin)
     } else {
         throw new Error('Check login credentials')
     }
 }
 
-async function checkLoginCredentials(userLogin: Iuser) {
+async function checkLoginCredentials(userLogin: IUser) {
     let getUser = await userRepository.getUserByName(userLogin.username)
 
     if (getUser == undefined) {

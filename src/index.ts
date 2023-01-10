@@ -7,6 +7,7 @@ const fastify = Fastify({
 
 fastify.register(userRoutes, { prefix: '/user' })
 
+
 fastify.listen({ port: 3333 }, (err, address) => {
     if (err) {
         fastify.log.error(err)
