@@ -8,9 +8,9 @@ const userDb: Array<IUser> = [
         password: '$2a$10$zkGHdc6TRXLjAZl7xj096e/JB6G.KZx0614l/OzVCpnA9GjeAHeBa'
     }
 ]
-async function getUserByName(getUsername: string){
-    let getUser = userDb.find(({ username }) => getUsername === username)
+async function getUserByUsername(getUsername: string) {
+    const getUser = userDb.find(({ username }) => getUsername === username)
     return getUser
 }
 
-export default {getUserByName}
+export default { getUserByUsername }

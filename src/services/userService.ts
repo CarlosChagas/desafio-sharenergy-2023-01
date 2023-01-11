@@ -3,7 +3,7 @@ import { compare } from 'bcrypt-ts'
 import jwt from '../security/jwt'
 
 
-async function authenticateUser(userLogin: IUser) {
+async function authenticate(userLogin: IUser) {
    
     if (await checkLoginCredentials(userLogin)) {
        return jwt.generateToken(userLogin)
@@ -31,5 +31,5 @@ async function validPassword(password: string, encryptedPassword: string) {
     return true
 }
 
-export default { authenticateUser }
+export default { authenticate }
 

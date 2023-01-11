@@ -1,12 +1,11 @@
-import Fastify, { FastifyInstance, FastifyRequest } from "fastify"
-import authenticate from "../controllers/userController"
-import IUserBody from "../interfaces/IuserBody"
+import Fastify, { FastifyInstance } from "fastify"
+import userController from "../controllers/userController"
 import decrypt from "../security/jwt"
 
 
 async function routes(fastify: FastifyInstance) {
 
-    fastify.post('/auth', authenticate)
+    fastify.post('/auth', userController.authenticate)
     fastify.get('/teste', { onRequest: decrypt.decryptToken }, (request, reply) => { reply.send(request.headers.username) })
 
 }
