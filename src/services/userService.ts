@@ -13,7 +13,7 @@ async function authenticate(userLogin: IUser) {
 }
 
 async function checkLoginCredentials(userLogin: IUser) {
-    let getUser = await userRepository.getUserByName(userLogin.username)
+    let getUser = await userRepository.findUserByUsername(userLogin.username)
 
     if (getUser == undefined) {
         return false
