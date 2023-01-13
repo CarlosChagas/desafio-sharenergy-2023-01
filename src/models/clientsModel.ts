@@ -1,7 +1,8 @@
 import { Schema, model } from "mongoose";
+import { ObjectId } from "mongoose-typescript";
 
 const clientSchema = new Schema({
-    id: { type: String},
+    id: { type: ObjectId},
     name: { type: String, required: true },
     email: { type: String, required: true },
     phone: { type: Number, required: true },

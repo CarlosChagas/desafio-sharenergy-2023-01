@@ -1,6 +1,6 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 import * as  jwt from 'jsonwebtoken'
-import IUserBody from '../interfaces/IUserBody'
+
 
 const SECRET = 'secret jwt env.secret'
 
@@ -10,8 +10,8 @@ function generateToken(data: IUser) {
   })
 }
 
-function decryptToken(request: FastifyRequest<{ Body: IUserBody, Headers: IHeaders }>, reply: FastifyReply, done: () => void) {
-  const token = request.headers.accesstoken
+function decryptToken(request: FastifyRequest<{Headers: IHeaders, Params: IParams}>, reply: FastifyReply, done: () => void) {
+  const token = request.headers.accesstoken 
 
   if (!token) {
     return reply.status(401).send({ response: { auth: false, message: 'Token was not informed' } })
