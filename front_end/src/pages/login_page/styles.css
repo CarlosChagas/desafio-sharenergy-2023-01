@@ -1,0 +1,27 @@
+#login {
+    display: flex;
+    direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 2rem;
+}
+
+Form {
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: rgb(163, 202, 230);
+    border-radius: 0.5rem;
+    padding: 4rem 12rem;
+}
+
+Form h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: blue;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+#switchremember {
+    margin-top: 2rem;
+}
