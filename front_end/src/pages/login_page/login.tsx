@@ -1,13 +1,14 @@
 import React from "react"
 import { Button, Form, FormGroup, Input, Label } from "reactstrap"
 import './styles.css'
+
 const Login = () => {
     return (
         <div id="login">
 
             <Form>
                 <h1>Sharenergy Challenge</h1>
-                
+
                 <FormGroup>
                     <Input id="usernameinput" placeholder="Username" type="text"></Input>
                 </FormGroup>
